@@ -50,7 +50,7 @@ class _trigger_cluster_loader:
         self.logger.info("completed sample {} , results in {}".format(
             self.sample, execution_output_file))
         file_stdout.close()
-        with open(str(execution_output_file)) as f:
+        with open(str(execution_output_file), encoding='utf-8') as f:
             output_file_content = f.readlines()
         pattern = re.compile('^{.*}')
         match_list = list(filter(pattern.match, output_file_content))
